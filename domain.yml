@@ -1,0 +1,96 @@
+actions:
+- action_check_location
+- action_search_restaurants
+- action_send_email
+- utter_ask_cuisine
+- utter_ask_emailid
+- utter_ask_location
+- utter_ask_price
+- utter_ask_sendemail
+- utter_default
+- utter_email_deny
+- utter_greet
+- utter_info_emailsent
+- utter_location_limit
+- utter_unknown_cuisine
+entities:
+- cuisine
+- email
+- location
+- price
+intents:
+- affirm
+- get_results_in_mail
+- restaurant_search
+- deny
+- greet
+- send_email
+- price
+responses:
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: American
+      title: American
+    - payload: Italian
+      title: Italian
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_emailid:
+  - text: Can you please share your email id?
+  utter_ask_location:
+  - text: In which location?
+  utter_ask_price:
+  - buttons:
+    - payload: Lesser than Rs. 300
+      title: Lesser than Rs. 300
+    - payload: Rs. 300 to 700
+      title: Rs. 300 to 700
+    - payload: More than 700
+      title: More than 700
+    text: What's the average budget for two people?
+  utter_ask_sendemail:
+  - text: Would you like to receive an email with the top 10 resturants details?
+  utter_default:
+  - text: Sorry, I cannot understand
+  utter_email_deny:
+  - text: goodbye.
+  - text: Bon Appetit!
+  utter_greet:
+  - text: Hey there! How may I help you?
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today?
+  - text: Hello, How may I help you?
+  utter_info_emailsent:
+  - text: Email has been sent successfully. Bon Appetit!
+  utter_location_limit:
+  - text: Sorry, We do not operate in that area yet. Can you please specify some other
+      location?
+  - text: Sorry, we don't operate in this city. Can you please specify some other
+      location?
+  - text: Sorry, didn't find any such location. Can you please tell again?
+  - text: Sorry, Still our services are extended to your current location.
+  - text: Sorry, We are limited to tier1 and tier2 cites as of now. We will be extending
+      to tier3 very shortly.
+  utter_unknown_cuisine:
+  - text: Sorry, Unknown cuisine. Kindly enter any cuisine listed in the menu.
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 0
+slots:
+  cuisine:
+    type: text
+  email:
+    type: text
+  emailbody:
+    type: text
+  location:
+    type: text
+  price:
+    type: text
